@@ -1,0 +1,94 @@
+{
+	season: "1996/97",
+	division: "Serie C1/b",
+	fixtures: [
+		{
+			day: 1,
+			homeTeam: {
+				name: "Ascoli",
+				lineUp: "Menghini, Savio, Milana (73' Rossi), Fiorentini, Fontana, Viali (85' Piccioni), Cammarieri, Romualdi, Rizzolo, Mobili (78' Salvagno), Manca.",
+				bench: "Musarra, Manoni, Minopoli, Cuccù",
+				trainer: "Nicolini" 
+			},
+			awayTeam: {
+				name: "Ischia Isolaverde",
+				lineUp: "Di Muro, Ruggero, Martuscello (75' Russo), Germoni, Desiato, Cavallo, Liguori, Castaiuolo (53' Di Costanzo), Buonocore, De Angelis, Di Maggio.",
+				bench: "Verde, Patrio, Parisi, Pennarola, Fiengo",
+				trainer: "Angrisani"
+			},
+
+			result: "2-0",
+			scorers: "18' Manca, 34' Mobili",
+			attendance: 4482,
+			corners: "5-0",
+			referee: {name: "Baglioni", from: "Prato"},
+			booking: "Buonocore, De Angelis, Cammarieri, Di Maggio",
+			sentOff: "65' Liguori"
+		},
+		{
+			day: 2,
+			homeTeam: {name: "Savoia"},
+			awayTeam: {name: "Ascoli"},
+			result: "1-0",
+			scorers: "90' Carruezzo",
+			attendance: 2530
+		},
+		{
+			day: 3,
+			homeTeam: {name: "Ascoli"},
+			awayTeam: {name: "Trapani"},
+			result: "4-1",
+			scorers: "12' Rizzolo, 21' Rizzolo, 69' Catalano, 70' Pompini, 80' Pompini",
+			attendance: 4274
+		}
+	],
+	gamesPlayed: [
+		["Sacchetti", 31], 
+		["Manca", 30], 
+		["Viali", 28], 
+		["Aprea", 0]
+	],
+	coach: [
+		{name: "Enrico Nicolini", allSeason: false, fromDay: 1, toDay: 11},
+		{name: "Francesco Scorsa", allSeason: false, fromDay: 12, toDay: 25},
+		{name: "Enrico Nicolini", allSeason: false, fromDay: 26, toEnd: true}
+		],
+	seasonScorers: [
+		[11, "Pompini", 2],
+		[7, "Rizzolo", 3],
+		[6, "Manca"],
+		[5, "Mobili"],
+		[3, "Cammarieri"],
+		[2, "Viali"],
+		[1, "Sacchetti"],
+		[1, "Sussi"],
+		[1, "Fiorentini"],
+		[1, "Di Meo"]
+		[-1, "Salvagno"],
+		[-1, "Fontana"]
+	],
+	leagueTable: [
+		{position: 1, team: "Fidelis Andria", points: 64, wins: 17, draws: 13, losses: 4, goalFor: 42, goalAgainst: 16, champion: true, promotion: true},
+
+		{position: 7, team: "Ascoli", points: 43, wins: 10, draws: 13, losses: 11, goalFor: 38, goalAgainst: 41}
+	],
+	playOff: {
+		semiFinals: [
+			{homeTeam: "Giulianova", awayTeam: "Ancona", result: "1-1"},
+			{homeTeam: "Ancona", awayTeam: "Giulianova", result: "2-1"},
+			{homeTeam: "Atleatico Catania", awayTeam: "Savoia", result: "0-0"},
+			{homeTeam: "Savoia", awayTeam: "Atleatico Catania", result: "1-0"}
+		],
+		finals: [{homeTeam: "Ancona", awayTeam: "Savoia", result: "1-0"}],
+		promoted: ["Fidelis Andria", "Ancona"]
+	},
+	playOut: {
+		finals: [
+			{homeTeam: "Sora", awayTeam: "Nocerina", result: "2-1"},			
+			{homeTeam: "Nocerina", awayTeam: "Sora", result: "2-1"},
+			{homeTeam: "Trapani", awayTeam: "Fermana", result: "0-0"},
+			{homeTeam: "Fermana", awayTeam: "Trapani", result: "1-1"}
+		]
+		relegated: ["Avezzano", "Sora", "Trapani"]
+	}
+}

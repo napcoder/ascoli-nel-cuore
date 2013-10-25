@@ -1,0 +1,9 @@
+{
+	"name": "ascoli-nel-cuore",
+	"description": "Ascoli football team supporter simple site, implemented for test and study purpose",
+	"version": "0.0.1",
+	"private": true,
+	"dependencies": {
+		"express": "3.4.3"
+	}
+}
