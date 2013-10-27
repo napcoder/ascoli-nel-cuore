@@ -11,8 +11,24 @@ var startServer = function() {
 	app.use(express.static(__dirname + '/img'));
 	app.use(express.static(__dirname + '/public'));
 
-	app.get('/championships', function(req, res) {
+	app.get('/example', function(req, res) {
 		handleChampionships(res, '/championships');
+	});
+
+	app.get('/championships', function(req, res) {
+		res.json(['1996-97', '1997-98', '1998-99']);
+	});
+
+	app.get('/championships/:year', function(req, res){
+		var selYear = req.param('year');
+		console.log('selected year: ' + selYear);
+		if (selYear === '97') {
+			res.json({year: 1997});
+		} else if (selYear === '98') {
+			res.json({year: 1998});
+		} else {
+			res.json({year: 'unknowed'});
+		}
 	});
 
 	app.get('*', function(req, res) {
@@ -28,9 +44,9 @@ var startServer = function() {
 var handleChampionships = function(response, pathname) {
 	console.log("Request handler " + pathname + " was called.");
 
-	fs.readFile('data_example.json', 'utf8', function(err, data) {
+	fs.readFile('data_example.json', function(err, data) {
 		if (err) throw err;
-		response.json(data);
+		response.json(JSON.parse(data));
 	});
 };
 
