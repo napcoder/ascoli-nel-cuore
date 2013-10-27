@@ -2,7 +2,14 @@
 	"name": "ascoli-nel-cuore",
 	"description": "Ascoli football team supporter simple site, implemented for test and study purpose",
 	"version": "0.0.1",
+	"author": "Marco Travaglini",
 	"private": true,
+	"bin" : {
+		"server": "./bin/server"
+	},
+	"scripts": {
+		"start": "node ./bin/server"
+	},
 	"dependencies": {
 		"express": "3.4.3"
 	}

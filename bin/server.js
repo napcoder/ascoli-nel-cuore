@@ -7,9 +7,9 @@ var startServer = function() {
 	var app = express();
 
 	app.use(express.logger());
-	app.use(express.favicon(__dirname + '/img/favicon.ico'));
-	app.use(express.static(__dirname + '/img'));
-	app.use(express.static(__dirname + '/public'));
+	app.use(express.favicon(__dirname + '/../img/favicon.ico'));
+	app.use(express.static(__dirname + '/../img'));
+	app.use(express.static(__dirname + '/../public'));
 
 	app.get('/example', function(req, res) {
 		handleChampionships(res, '/championships');
