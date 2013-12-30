@@ -1,16 +1,22 @@
 {
-	"name": "ascoli-nel-cuore",
-	"description": "Ascoli football team supporter simple site, implemented for test and study purpose",
-	"version": "0.0.1",
-	"author": "Marco Travaglini",
-	"private": true,
-	"bin" : {
-		"server": "./bin/server"
-	},
-	"scripts": {
-		"start": "node ./bin/server"
-	},
-	"dependencies": {
-		"express": "3.4.3"
-	}
+  "name": "ascoli-nel-cuore",
+  "description": "Ascoli football team supporter simple site, implemented for test and study purpose",
+  "version": "0.0.1",
+  "author": "Marco Travaglini",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "3.4.7",
+    "jade": "*",
+    "mongodb": "~1.3.19"
+  },
+  "devDependencies": {
+    "phantomjs" : "~1.9",
+    "karma" : "~0.10",
+    "karma-junit-reporter" : "~0.1",
+    "karma-jasmine" : "~0.1",
+    "karma-ng-scenario" : "~0.1"
+  }
 }
