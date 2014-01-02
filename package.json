@@ -4,8 +4,13 @@
   "version": "0.0.1",
   "author": "Marco Travaglini",
   "private": true,
-  "scripts": {
-    "start": "node app.js"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/napcoder/ascoli-nel-cuore.git"
+  },
+  "engines": {
+    "node": ">= 0.10.9",
+    "npm": ">= 1.0.0"
   },
   "dependencies": {
     "express": "3.4.7",
@@ -18,5 +23,9 @@
     "karma-junit-reporter" : "~0.1",
     "karma-jasmine" : "~0.1",
     "karma-ng-scenario" : "~0.1"
-  }
+  },
+  "scripts": {
+    "start": "node app.js"
+  },
+  "main": "app.js"
 }
