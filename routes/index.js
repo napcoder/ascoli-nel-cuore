@@ -4,7 +4,7 @@
  */
 
 exports.index = function(req, res){
-  res.render('index', { title: 'Ascoli nel cuore' });
+  res.render('index', { title: '' });
 };
 
 exports.health = function(req, res) {
@@ -23,4 +23,8 @@ exports.env = function(req, res) {
     res.send('<html>\n' +
              '  <head><title>Node.js Process Env</title></head>\n' +
              '  <body>\n<br/>\n' + content + '</body>\n</html>');
+};
+
+exports.partial1 = function(req, res) {
+  res.render('partial1');
 };

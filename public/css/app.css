@@ -8,6 +8,12 @@ a {
   color: #00B7FF;
 }
 
+img.ascoli-nel-cuore-small {
+  /*width: 27px;*/
+  height: 25px;
+  padding: 0px 3px 0px 0px;
+}
+
 .menu {
   list-style: none;
   border-bottom: 0.1em solid black;

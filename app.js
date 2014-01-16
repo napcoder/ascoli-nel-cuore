@@ -99,6 +99,7 @@ var SampleApp = function() {
 
 		// ROUTES
         self.app.get('/', routes.index);
+        self.app.get('/partials/partial1.html', routes.partial1);
 		self.app.get('/health', routes.health);
 		self.app.get('/env', routes.env);
 		self.app.get('/championships', champ.list);
