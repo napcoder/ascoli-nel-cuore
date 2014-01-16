@@ -2,12 +2,13 @@
 /**
  * Module dependencies.
  */
-var express = require('express');
-var http    = require('http');
-var path    = require('path');
-var fs      = require('fs');
-var routes  = require('./routes');
-var champ   = require('./routes/championships');
+var express  = require('express');
+var http     = require('http');
+var path     = require('path');
+var fs       = require('fs');
+var routes   = require('./routes');
+var champ    = require('./routes/championships');
+var partials = require('./routes/partials');
 
 /**
  *  Define the sample application.
@@ -99,12 +100,16 @@ var SampleApp = function() {
 
 		// ROUTES
         self.app.get('/', routes.index);
-        self.app.get('/partials/partial1.html', routes.partial1);
 		self.app.get('/health', routes.health);
 		self.app.get('/env', routes.env);
 		self.app.get('/championships', champ.list);
 		self.app.get('/championships/:year', champ.year);
 		self.app.get('/example', champ.example);
+
+        // ROUTES PARTIALS for AngularJs
+        self.app.get('/partials/home.html', partials.home);
+        self.app.get('/partials/api.html', partials.api);
+        self.app.get('/partials/partial1.html', partials.partial1);
 	};
 	
 	/**

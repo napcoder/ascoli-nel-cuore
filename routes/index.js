@@ -25,6 +25,4 @@ exports.env = function(req, res) {
              '  <body>\n<br/>\n' + content + '</body>\n</html>');
 };
 
-exports.partial1 = function(req, res) {
-  res.render('partial1');
-};
+

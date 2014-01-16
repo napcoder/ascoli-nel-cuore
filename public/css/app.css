@@ -8,6 +8,23 @@ a {
   color: #00B7FF;
 }
 
+.header {
+  margin-bottom: 30px;
+}
+
+.jumbotron {
+  text-align: center;
+}
+
+img {
+  max-width: 100%;
+  width: auto\9;
+  height: auto;
+  vertical-align: middle;
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+}
+
 img.ascoli-nel-cuore-small {
   /*width: 27px;*/
   height: 25px;

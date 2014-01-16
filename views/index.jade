@@ -1,35 +1,35 @@
 extends layout
 
 block content
-	nav(role='navigation').navbar.navbar-inverse.navbar-fixed-top
-		.navbar-header
-			button(type='button', data-toggle='collapse', data-target='#ascoli-navbar-collapse-1').navbar-toggle
-				span.sr-only Toggle navigation
-				span.icon-bar
-				span.icon-bar
-				span.icon-bar
-			a(href='#', style='padding-bottom: 0px;').navbar-brand 
-				img(src='img/ascoli-nel-cuore-small.png').ascoli-nel-cuore-small
-				|  Ascoli nel Cuore
-		#ascoli-navbar-collapse-1.collapse.navbar-collapse
-			ul.nav.navbar-nav
-				li: a(href='#') 
-					span.glyphicon.glyphicon-home
-					|  Home
-				li.dropdown
-					a(href='#', data-toggle='dropdown').dropdown-toggle 
-						| Championships
-						b.caret
-						ul.dropdown-menu
-							li: a(href='#') Action1
-							li: a(href='#') Action2
-				li: a(href='#') API
+	.header
+		nav(role='navigation').navbar.navbar-inverse.navbar-fixed-top
+			.navbar-header
+				button(type='button', data-toggle='collapse', data-target='#ascoli-navbar-collapse-1').navbar-toggle
+					span.sr-only Toggle navigation
+					span.icon-bar
+					span.icon-bar
+					span.icon-bar
+				a(href='#', style='padding-bottom: 0px;').navbar-brand 
+					img(src='img/ascoli-nel-cuore-small.png').ascoli-nel-cuore-small
+					|  Ascoli nel Cuore
+			#ascoli-navbar-collapse-1.collapse.navbar-collapse
+				ul.nav.navbar-nav
+					li: a(href='#/home') 
+						span.glyphicon.glyphicon-home
+						|  Home
+					li.dropdown
+						a(href='#', data-toggle='dropdown').dropdown-toggle 
+							span.glyphicon.glyphicon-tower
+							|  Championships
+							b.caret
+							ul.dropdown-menu
+								li: a(href='#') Action1
+								li: a(href='#') Action2
+					li: a(href='#')
+						span.glyphicon.glyphicon-glass
+						|  Trophies
+					li: a(href='#/api') 
+						span.glyphicon.glyphicon-cloud
+						|  API
 
 	div(ng-view)
-
-	h1= title.toUpperCase()
-	//p Welcome to #{title}
-	ul
-		li Type /championships for available championships list
-		li Type /championships/year for selected year
-		li Type /example for a complete example
