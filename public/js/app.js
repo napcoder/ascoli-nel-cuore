@@ -9,7 +9,8 @@ angular.module('ascoliNcApp', [
   //'ascoliNcApp.directives',
   'ascoliNcApp.controllers'
 ]).
-config(['$routeProvider', function($routeProvider) {
+config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
+  $locationProvider.html5Mode(true);
   $routeProvider.
     when('/home', {
       templateUrl: 'partials/home.html',
