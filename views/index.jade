@@ -1,32 +1,11 @@
 extends layout
 
 block content
-	.header
-		nav(role='navigation').navbar.navbar-inverse.navbar-fixed-top
-			.navbar-header
-				button(type='button', data-toggle='collapse', data-target='#ascoli-navbar-collapse-1').navbar-toggle
-					span.sr-only Toggle navigation
-					span.icon-bar
-					span.icon-bar
-					span.icon-bar
-				a(href='/home', style='padding-bottom: 0px;').navbar-brand 
-					img(src='img/ascoli-nel-cuore-small.png').ascoli-nel-cuore-small
-					|  Ascoli nel Cuore
-			#ascoli-navbar-collapse-1.collapse.navbar-collapse
-				ul.nav.navbar-nav
-					li.dropdown
-						a(href='#', data-toggle='dropdown').dropdown-toggle 
-							i.fa.fa-book.fa-fw
-							|  Championships
-							b.caret
-							ul.dropdown-menu
-								li: a(href='#') Action1
-								li: a(href='#') Action2
-					li: a(href='#')
-						i.fa.fa-trophy.fa-fw
-						|  Trophies
-					li: a(href='/api') 
-						i.fa.fa-cogs.fa-fw
-						|  API
+	include navbar.jade
 
-	div(ng-view)
+	.container
+		.jumbotron
+			img(src='img/ascoli-nel-cuore.png')
+			h1 Ascoli nel Cuore
+			p.lead
+				| Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.

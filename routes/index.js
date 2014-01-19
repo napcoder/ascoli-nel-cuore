@@ -4,7 +4,11 @@
  */
 
 exports.index = function(req, res){
-  res.render('index', { title: '' });
+  res.render('index');
+};
+
+exports.api = function(req, res) {
+  res.render('api', { title: 'Api' });
 };
 
 exports.health = function(req, res) {

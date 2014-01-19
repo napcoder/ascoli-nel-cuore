@@ -2,7 +2,7 @@ doctype html
 html(lang='en', ng-app='ascoliNcApp')
 	head
 		meta(name='viewport', content='width=device-width, initial-scale=1.0')
-		title= 'Ascoli nel Cuore' + (title ? ' - ' + title : '')
+		title= 'Ascoli nel Cuore' + (title ? ': ' + title : '')
 		link(rel='stylesheet', href='css/app.css')
 		link(rel='stylesheet', href='components/bootstrap/dist/css/bootstrap.min.css')
 		link(rel='stylesheet', href='components/font-awesome/css/font-awesome.min.css')
@@ -17,7 +17,6 @@ html(lang='en', ng-app='ascoliNcApp')
 		block content
 
 		script(src='components/angular/angular.min.js')
-		script(src='components/angular-route/angular-route.min.js')
 		script(src='js/app.js')
 		script(src='js/controllers.js')
 		script(src='components/jquery/jquery.min.js')

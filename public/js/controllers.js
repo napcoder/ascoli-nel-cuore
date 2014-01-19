@@ -8,10 +8,4 @@ angular.module('ascoliNcApp.controllers', [])
   }])
   .controller('ApiCtrl', [function() {
 
-  }])
-  .controller('MyCtrl1', [function() {
-
-  }])
-  .controller('MyCtrl2', [function() {
-
   }]);

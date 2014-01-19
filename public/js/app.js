@@ -3,13 +3,14 @@
 
 // Declare app level module which depends on filters, and services
 angular.module('ascoliNcApp', [
-  'ngRoute',
+  //'ngRoute',
   //'ascoliNcApp.filters',
   //'ascoliNcApp.services',
   //'ascoliNcApp.directives',
   'ascoliNcApp.controllers'
-]).
-config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
+]);
+/*
+.config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
   $locationProvider.html5Mode(true);
   $routeProvider.
     when('/home', {
@@ -32,3 +33,4 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
   		redirectTo: '/home'
   	});
 }]);
+*/
