@@ -14,7 +14,7 @@
 			ul.nav.navbar-nav
 				li.dropdown
 					a(href='#', data-toggle='dropdown').dropdown-toggle 
-						i.fa.fa-book.fa-fw
+						i.fa.fa-shield.fa-fw
 						| 
 						span(translate='NAV.CHAMPIONSHIPS')
 						b.caret
@@ -29,3 +29,17 @@
 					i.fa.fa-cogs.fa-fw
 					| 
 					span(translate='API')
+			ul.nav.navbar-nav.navbar-right
+				li#language.dropdown
+					a(href='#', data-toggle='dropdown').dropdown-toggle
+						i.fa.fa-flag.fa-fw
+						|  
+						span(translate='NAV.LANGUAGE')
+						b.caret
+						ul.dropdown-menu
+							li: a(href='#' ng-click="changeLanguage('en')") 
+								img(src='img/flag_en.png')
+								|  English
+							li: a(href='#' ng-click="changeLanguage('it')") 
+								img(src='img/flag_it.png')
+								|  Italiano

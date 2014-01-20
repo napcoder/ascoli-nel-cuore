@@ -20,6 +20,10 @@ a {
   text-align: center;
 }
 
+#language {
+  padding-right: 15px;
+}
+
 img {
   max-width: 100%;
   width: auto\9;

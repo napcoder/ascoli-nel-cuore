@@ -3,8 +3,8 @@
 
 var translationsEN = {
   SITE: {
-    NAME: 'Ascoli my heart',
-    DESCRIPTION: 'This site was one of the first one in the far 1996 to go online, cool!',
+    NAME: 'Ascoli My Heart',
+    DESCRIPTION: 'Cras pulvinar, nunc sit amet gravida fringilla, mi tortor sagittis leo, vel facilisis tellus sem.',
     FOOTER: 'Made at late night by a sleepy '
   },
   NAV: {
@@ -18,8 +18,8 @@ var translationsEN = {
 
 var translationsIT = {
   SITE: {
-    NAME: 'Ascoli nel cuore',
-    DESCRIPTION: 'Questo sito è stato uno dei primi nel lontano 1996 ad andare online, fico!',
+    NAME: 'Ascoli Nel Cuore',
+    DESCRIPTION: 'Suspendisse sagittis dapibus leo, non ornare nisl. Pellentesque sed lorem nunc. Proin vitae adipiscing tellus.',
     FOOTER: 'Fatto a notte fonda da un assonnato '
   },
   NAV: {
