@@ -8,20 +8,24 @@
 				span.icon-bar
 			a(href='/', style='padding-bottom: 0px;').navbar-brand 
 				img(src='img/ascoli-nel-cuore-small.png').ascoli-nel-cuore-small
-				|  Ascoli nel Cuore
+				| 
+				span(translate='NAV.HOME')
 		#ascoli-navbar-collapse-1.collapse.navbar-collapse
 			ul.nav.navbar-nav
 				li.dropdown
 					a(href='#', data-toggle='dropdown').dropdown-toggle 
 						i.fa.fa-book.fa-fw
-						|  Championships
+						| 
+						span(translate='NAV.CHAMPIONSHIPS')
 						b.caret
 						ul.dropdown-menu
 							li: a(href='#') Action1
 							li: a(href='#') Action2
 				li: a(href='#')
 					i.fa.fa-trophy.fa-fw
-					|  Trophies
+					| 
+					span(translate='NAV.CUPS')
 				li: a(href='/api') 
 					i.fa.fa-cogs.fa-fw
-					|  API
+					| 
+					span(translate='API')

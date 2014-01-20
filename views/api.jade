@@ -1,10 +1,14 @@
 extends layout
 
 block content
-	include navbar.jade
-	
-	h1 API
-	ul
-		li Type /championships for available championships list
-		li Type /championships/year for selected year
-		li Type /example for a complete example
+	div(ng-controller='ApiCtrl')
+		include navbar.jade
+		
+		h1 API
+		ul
+			li Type /championships for available championships list
+			li Type /championships/year for selected year
+			li Type /example for a complete example
+
+		button(ng-click="changeLanguage('it')") Italiano
+		button(ng-click="changeLanguage('en')") English

@@ -16,15 +16,18 @@ html(lang='en', ng-app='ascoliNcApp')
 	body
 		block content
 
-		script(src='components/angular/angular.min.js')
+		.footer
+			hr
+			p 
+				span(translate='SITE.FOOTER')
+				i.fa.fa-github.fa-lg
+				a(href='https://github.com/napcoder')  Napcoder
+
+		script(src='components/angular/angular.js')
+		script(src='components/angular-cookies/angular-cookies.js')
+		script(src='components/angular-translate/angular-translate.js')
+		script(src='components/angular-translate-storage-cookie/angular-translate-storage-cookie.js')
 		script(src='js/app.js')
 		script(src='js/controllers.js')
 		script(src='components/jquery/jquery.min.js')
 		script(src='components/bootstrap/dist/js/bootstrap.min.js')
-
-		.footer
-			hr
-			p 
-				| Made at late night by a sleepy 
-				i.fa.fa-github.fa-lg
-				a(href='https://github.com/napcoder')  Napcoder

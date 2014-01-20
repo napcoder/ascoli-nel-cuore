@@ -3,9 +3,13 @@
 /* Controllers */
 
 angular.module('ascoliNcApp.controllers', [])
-  .controller('HomeCtrl', [function() {
-  	
+  .controller('HomeCtrl', ['$scope', '$translate', function($scope, $translate) {
+	$scope.changeLanguage = function(langKey) {
+		$translate.uses(langKey);
+	};
   }])
-  .controller('ApiCtrl', [function() {
-
+  .controller('ApiCtrl', ['$scope', '$translate', function($scope, $translate) {
+	$scope.changeLanguage = function(langKey) {
+		$translate.uses(langKey);
+	};
   }]);

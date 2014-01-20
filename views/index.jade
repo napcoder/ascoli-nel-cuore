@@ -1,11 +1,14 @@
 extends layout
 
 block content
-	include navbar.jade
+	div(ng-controller='HomeCtrl')
+		include navbar.jade
 
-	.container
-		.jumbotron
-			img(src='img/ascoli-nel-cuore.png')
-			h1 Ascoli nel Cuore
-			p.lead
-				| Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+		.container
+			.jumbotron
+				img(src='img/ascoli-nel-cuore.png')
+				h1 {{ 'SITE.NAME' | translate | uppercase }}
+				p(translate).lead SITE.DESCRIPTION
+
+				button(ng-click="changeLanguage('it')") Italiano
+				button(ng-click="changeLanguage('en')") English
