@@ -1,12 +1,11 @@
 doctype html
-html(lang='en', ng-app='ascoliNcApp')
+html(ng-app='ascoliNcApp')
 	head
 		meta(name='viewport', content='width=device-width, initial-scale=1.0')
 		title= 'Ascoli nel Cuore' + (title ? ': ' + title : '')
 		link(rel='stylesheet', href='css/app.css')
 		link(rel='stylesheet', href='components/bootstrap/dist/css/bootstrap.min.css')
-		link(rel='stylesheet', href='components/font-awesome/css/font-awesome.min.css')
-		//- link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css')
+		link(rel='stylesheet', href='components/font-awesome/css/font-awesome.min.css')		
 		//
 			[if lt IE 9]
 				<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -19,7 +18,7 @@ html(lang='en', ng-app='ascoliNcApp')
 		.footer
 			hr
 			p 
-				span(translate='SITE.FOOTER')
+				span(translate='SITE.FOOTER', ng-cloak)
 				i.fa.fa-github.fa-lg
 				a(href='https://github.com/napcoder')  Napcoder
 

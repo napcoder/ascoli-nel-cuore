@@ -9,14 +9,14 @@
 			a(href='/', style='padding-bottom: 0px;').navbar-brand 
 				img(src='img/ascoli-nel-cuore-small.png').ascoli-nel-cuore-small
 				| 
-				span(translate='NAV.HOME')
+				span(translate='NAV.HOME', ng-cloak)
 		#ascoli-navbar-collapse-1.collapse.navbar-collapse
 			ul.nav.navbar-nav
 				li.dropdown
 					a(href='#', data-toggle='dropdown').dropdown-toggle 
 						i.fa.fa-shield.fa-fw
 						| 
-						span(translate='NAV.CHAMPIONSHIPS')
+						span(translate='NAV.CHAMPIONSHIPS', ng-cloak)
 						b.caret
 						ul.dropdown-menu
 							li: a(href='#') Action1
@@ -24,17 +24,17 @@
 				li: a(href='#')
 					i.fa.fa-trophy.fa-fw
 					| 
-					span(translate='NAV.CUPS')
+					span(translate='NAV.CUPS', ng-cloak)
 				li: a(href='/api') 
 					i.fa.fa-cogs.fa-fw
 					| 
-					span(translate='API')
+					span(translate='API', ng-cloak)
 			ul.nav.navbar-nav.navbar-right
 				li#language.dropdown
 					a(href='#', data-toggle='dropdown').dropdown-toggle
 						i.fa.fa-flag.fa-fw
 						|  
-						span(translate='NAV.LANGUAGE')
+						span(translate='NAV.LANGUAGE', ng-cloak)
 						b.caret
 						ul.dropdown-menu
 							li: a(href='#' ng-click="changeLanguage('en')") 

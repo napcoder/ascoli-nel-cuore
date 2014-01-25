@@ -7,5 +7,5 @@ block content
 		.container
 			.jumbotron
 				img(src='img/ascoli-nel-cuore.png')
-				h1 {{ 'SITE.NAME' | translate | uppercase }}
-				p(translate).lead SITE.DESCRIPTION
+				h1(ng-cloak) {{ 'SITE.NAME' | translate | uppercase }}
+				p(translate, ng-cloak).lead SITE.DESCRIPTION
