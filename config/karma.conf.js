@@ -3,20 +3,27 @@ module.exports = function(config){
     basePath : '../',
 
     files : [
-      'app/lib/angular/angular.js',
-      'app/lib/angular/angular-*.js',
+      'public/components/angular/angular.js',
+      'public/components/angular-translate/angular-translate.js',
+      'public/components/angular-*/angular-*.js',
       'test/lib/angular/angular-mocks.js',
-      'app/js/**/*.js',
+      'public/js/**/*.js',
       'test/unit/**/*.js'
     ],
 
     exclude : [
-      'app/lib/angular/angular-loader.js',
-      'app/lib/angular/*.min.js',
-      'app/lib/angular/angular-scenario.js'
+      'public/components/angular-*/angular-loader.js',
+      'public/components/angular-*/*.min.js',
+      'public/components/angular/*.min.js',
+      'public/components/angular-*/angular-scenario.js'
     ],
 
     autoWatch : true,
+
+    // level of logging
+    // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
+    // CLI --log-level debug
+    logLevel: config.LOG_INFO,
 
     frameworks: ['jasmine'],
 
@@ -34,4 +41,4 @@ module.exports = function(config){
       suite: 'unit'
     }
 
-})}
+});};

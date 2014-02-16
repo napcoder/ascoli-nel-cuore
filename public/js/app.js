@@ -1,7 +1,7 @@
 'use strict';
 
 // Declare app level module which depends on filters, and services
-var app = angular.module('ascoliNcApp', [
+angular.module('ascoliNcApp', [
   //'ngRoute',
   //'ascoliNcApp.filters',
   //'ascoliNcApp.services',
@@ -9,9 +9,8 @@ var app = angular.module('ascoliNcApp', [
   'ascoliNcApp.controllers',
   'ngCookies',
   'pascalprecht.translate'
-]);
-
-app.config(['$translateProvider', function($translateProvider) {
+])
+.config(['$translateProvider', function($translateProvider) {
   // add translation table
   $translateProvider.translations('en', translationsEN);
   $translateProvider.translations('it', translationsIT);

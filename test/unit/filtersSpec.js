@@ -2,8 +2,8 @@
 
 /* jasmine specs for filters go here */
 
-describe('filter', function() {
-  beforeEach(module('myApp.filters'));
+/*describe('filter', function() {
+  beforeEach(module('ascoliNcApp.filters'));
 
 
   describe('interpolate', function() {
@@ -12,8 +12,9 @@ describe('filter', function() {
     }));
 
 
-    it('should replace VERSION', inject(function(interpolateFilter) {
+    xit('should replace VERSION', inject(function(interpolateFilter) {
       expect(interpolateFilter('before %VERSION% after')).toEqual('before TEST_VER after');
     }));
   });
 });
+*/

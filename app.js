@@ -8,6 +8,9 @@ var path     = require('path');
 var fs       = require('fs');
 var routes   = require('./routes');
 var champ    = require('./routes/championships');
+var apiChamp = require('./routes/api-championships');
+
+var champService = require('./services/champ-service');
 
 /**
  *  Define the sample application.
@@ -102,9 +105,12 @@ var SampleApp = function() {
         self.app.get('/api', routes.api);
 		self.app.get('/health', routes.health);
 		self.app.get('/env', routes.env);
-		self.app.get('/championships', champ.list);
+		self.app.get('/championships', champ.list(null, champService));
 		self.app.get('/championships/:year', champ.year);
 		self.app.get('/example', champ.example);
+
+        // API
+        self.app.get('/api/championships', apiChamp.list(null, champService));
 	};
 	
 	/**

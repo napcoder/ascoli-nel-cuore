@@ -1,0 +1,9 @@
+extends layout
+
+block content
+	div(ng-controller='ChampionshipsCtrl', ng-init="setChampionships( #{championships} )")
+		include navbar.jade
+		
+		h1 Champs
+		ul
+			li(ng-repeat="champ in championships") {{champ.year}}
