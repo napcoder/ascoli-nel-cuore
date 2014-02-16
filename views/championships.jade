@@ -1,11 +1,21 @@
 extends layout
 
 block content
-	div(ng-controller='ChampionshipsCtrl', 
-		ng-init="setChampionships( #{JSON.stringify(championships)} )")
+	div(ng-controller='ChampionshipsCtrl') 
+		//-ng-init="setChampionships( #{JSON.stringify(championships)} )")
 		include navbar.jade
 		
 		h1 Champs
-		ul
-			li(ng-repeat="champ in championships")
-				{{champ.year}} - {{champ.league}}: place {{champ.position}}
+
+		.panel-group#accordion
+			each years in [1950, 1960, 1970, 1980, 1990, 2000, 2010]
+				.panel.panel-default
+					.panel-heading
+						h4.panel-title
+							a(data-toggle='collapse', 
+								data-parent='#accordion', 
+								href='#collapse'+years)
+								= years + 's'
+					div(id='collapse'+years).panel-collapse.collapse
+						.panel-body
+							p= 'bla bla bla ' + years
