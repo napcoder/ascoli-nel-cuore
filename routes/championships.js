@@ -8,8 +8,8 @@ exports.list = function(db, champService) {
 	return function(req, res) {
 		champService.list(db, function(err, data) {
 			if (err) throw err;
-			res.render('championships', { 
-				title: 'championships',  
+			res.render('championships', {
+				title: 'championships',
 				championships: data
 			});
 		});

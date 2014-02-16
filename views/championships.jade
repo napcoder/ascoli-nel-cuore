@@ -1,9 +1,11 @@
 extends layout
 
 block content
-	div(ng-controller='ChampionshipsCtrl', ng-init="setChampionships( #{championships} )")
+	div(ng-controller='ChampionshipsCtrl', 
+		ng-init="setChampionships( #{JSON.stringify(championships)} )")
 		include navbar.jade
 		
 		h1 Champs
 		ul
-			li(ng-repeat="champ in championships") {{champ.year}}
+			li(ng-repeat="champ in championships")
+				{{champ.year}} - {{champ.league}}: place {{champ.position}}
