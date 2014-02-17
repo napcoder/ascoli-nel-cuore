@@ -1,14 +1,22 @@
 var translationsEN = {
   SITE: {
     NAME: 'Ascoli My Heart',
-    DESCRIPTION: 'Cras pulvinar, nunc sit amet gravida fringilla, mi tortor sagittis leo, vel facilisis tellus sem.',
+    DESCRIPTION: 'Historical and statistical website dedicated to Ascoli Calcio 1898. Online since 1996.',
     FOOTER: 'Made at late night by a sleepy '
   },
   NAV: {
     HOME: '@:SITE.NAME',
     CHAMPIONSHIPS: 'Championships',
+    OVERVIEW: 'Overview Page',
     CUPS: 'Cups',
     API: 'API',
     LANGUAGE: 'Language'
+  },
+  CHAMPS: {
+    TITLE: 'Championships',
+    HEADER: 'The {{year}}s',
+    SEASON: 'Season',
+    LEAGUE: 'League',
+    PLACING: 'Placing'
   }
 };

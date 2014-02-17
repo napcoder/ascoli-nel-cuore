@@ -19,8 +19,12 @@
 						span(translate='NAV.CHAMPIONSHIPS', ng-cloak)
 						b.caret
 						ul.dropdown-menu
-							li: a(href='#') Action1
-							li: a(href='#') Action2
+							li: a(href='/championships') 
+								span(translate='NAV.OVERVIEW')
+							li.divider
+							each year in [1950, 1960, 1970, 1980, 1990, 2000, 2010]
+								li: a(href='#') 
+									span(translate='CHAMPS.HEADER', translate-values='{ year: "' + year + '"}' , ng-cloak)
 				li: a(href='#')
 					i.fa.fa-trophy.fa-fw
 					| 

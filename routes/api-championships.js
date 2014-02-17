@@ -6,7 +6,7 @@ var fs = require("fs");
 
 exports.list = function(db, champService) {
 	return function(req, res) {
-		champService.list(db, function(err, data) {
+		champService.list(db, req.params.decade, function(err, data) {
 			if (err) throw err;
 			res.json(data);
 		});

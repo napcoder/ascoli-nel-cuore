@@ -103,11 +103,13 @@ var SampleApp = function() {
 		// ROUTES
         self.app.get('/', routes.index);
         self.app.get('/api', routes.api);
-		self.app.get('/health', routes.health);
-		self.app.get('/env', routes.env);
-		self.app.get('/championships', champ.list(null, champService));
-		self.app.get('/championships/:year', champ.year);
-		self.app.get('/example', champ.example);
+        self.app.get('/api/championships/overview', apiChamp.list(null, champService));
+        self.app.get('/api/championships/overview/:decade', apiChamp.list(null, champService));
+		self.app.get('/api/example', champ.example);
+        self.app.get('/health', routes.health);
+        self.app.get('/env', routes.env);
+        self.app.get('/championships', champ.list);
+        self.app.get('/championships/:year', champ.year);
 
         // API
         self.app.get('/api/championships', apiChamp.list(null, champService));

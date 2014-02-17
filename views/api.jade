@@ -6,6 +6,12 @@ block content
 		
 		h1 API
 		ul
-			li Type /championships for available championships list
-			li Type /championships/year for selected year
-			li Type /example for a complete example
+			li 
+				a(href='/api/championships/overview') /api/championships/overview
+				|  for available championships list
+			li 
+				a(href='/api/championships/overview/1980') /api/championships/overview/:decade
+				|  for selected decade only
+			li
+				a(href='/api/example') /api/example
+				|  for a complete example

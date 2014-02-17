@@ -4,16 +4,10 @@ var fs = require("fs");
  * GET users listing.
  */
 
-exports.list = function(db, champService) {
-	return function(req, res) {
-		champService.list(db, function(err, data) {
-			if (err) throw err;
-			res.render('championships', {
-				title: 'championships',
-				championships: data
-			});
-		});
-	};
+exports.list = function(req, res) {
+	res.render('championships', {
+		title: 'championships',
+	});
 };
 
 exports.year = function(req, res) {
