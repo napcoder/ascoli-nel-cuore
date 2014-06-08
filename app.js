@@ -2,13 +2,18 @@
 /**
  * Module dependencies.
  */
-var express  = require('express');
-var http     = require('http');
-var path     = require('path');
-var fs       = require('fs');
-var routes   = require('./routes');
-var champ    = require('./routes/championships');
-var apiChamp = require('./routes/api-championships');
+var express  = require('express'),
+    favicon  = require('serve-favicon'),
+    morgan   = require('morgan'), //logging
+    bodyParser = require('body-parser'),
+    methodOverride = require('method-override'),
+    errorHandler = require('errorhandler'),
+    http     = require('http'),
+    path     = require('path'),
+    fs       = require('fs'),
+    routes   = require('./routes'),
+    champ    = require('./routes/championships'),
+    apiChamp = require('./routes/api-championships');
 
 var champService = require('./services/champ-service');
 
@@ -87,17 +92,15 @@ var SampleApp = function() {
 		//self.app.set('port', process.env.PORT || 3000);
 		self.app.set('views', path.join(__dirname, 'views'));
 		self.app.set('view engine', 'jade');
-		self.app.use(express.favicon(path.join(__dirname, 'public/img/favicon.ico')));
-		self.app.use(express.logger('dev'));
-		self.app.use(express.json());
-		self.app.use(express.urlencoded());
-		self.app.use(express.methodOverride());
-		self.app.use(self.app.router);
+		self.app.use(favicon(path.join(__dirname, 'public/img/favicon.ico')));
+		self.app.use(morgan('dev'));
+		self.app.use(bodyParser());
+		self.app.use(methodOverride());
 		self.app.use(express.static(path.join(__dirname, 'public')));
 
 		// development only
 		if ('development' == self.app.get('env')) {
-			self.app.use(express.errorHandler());
+			self.app.use(errorHandler());
 		}
 
 		// ROUTES
@@ -114,7 +117,7 @@ var SampleApp = function() {
         // API
         self.app.get('/api/championships', apiChamp.list(null, champService));
 	};
-	
+
 	/**
      *  Initializes the sample application.
      */
