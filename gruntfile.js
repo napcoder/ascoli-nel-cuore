@@ -14,6 +14,14 @@ module.exports = function(grunt) {
         },
 
         jshint: {
+            options: {
+                //node: true,
+                globals: {
+                    angular: true,
+                    translationsEN: true,
+                    translationsIT: true
+                }
+            },
             files: ['gruntfile.js', 'app.js', 'test/client/**/*.js', 'test/server/**/*.js', 'routes/**/*.js', 'services/**/*.js', 'public/js/**/*.js']
         }
     });
