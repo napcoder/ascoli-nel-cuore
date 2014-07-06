@@ -73,7 +73,7 @@
 
 		it('should get 1960 data and set to [2]', function() {
 			var champ = [2];
-			httpMock.when('GET', '/api/championships/overview/1960').respond(champ);
+			httpMock.when('GET', '/api/0.1/championships/overview/1960').respond(champ);
 			scope.getDecade('1960');
 			httpMock.flush();
 			expect(scope.championships['1960'].length).toBe(1);
@@ -83,7 +83,7 @@
 		it('should not perform a new api call when data is present', function() {
 			scope.setChampionships('1970', [3]);
 			var champ = [2, 2];
-			httpMock.when('GET', '/api/championships/overview/1970').respond(champ);
+			httpMock.when('GET', '/api/0.1/championships/overview/1970').respond(champ);
 			scope.getDecade('1970');
 			expect(scope.championships['1970'].length).toBe(1);
 			expect(scope.championships['1970']).toContain(3);

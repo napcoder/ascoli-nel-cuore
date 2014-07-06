@@ -23,7 +23,7 @@
 			};
 			$scope.getDecade = function(decade) {
 				if (!$scope.championships[decade]) {
-					$http.get('/api/championships/overview/' + decade).success(function(data) {
+					$http.get('/api/0.1/championships/overview/' + decade).success(function(data) {
 						$scope.setChampionships(decade, data);
 					});
 				}

@@ -3,19 +3,18 @@
  * Module dependencies.
  */
 var express  = require('express'),
-    favicon  = require('serve-favicon'),
-    morgan   = require('morgan'), //logging
+    favicon = require('serve-favicon'),
+    morgan = require('morgan'), //logging
     bodyParser = require('body-parser'),
     methodOverride = require('method-override'),
     errorHandler = require('errorhandler'),
-    http     = require('http'),
-    path     = require('path'),
-    fs       = require('fs'),
-    routes   = require('./routes'),
-    champ    = require('./routes/championships'),
-    apiChamp = require('./routes/api-championships');
-
-var champService = require('./services/champ-service');
+    http = require('http'),
+    path = require('path'),
+    fs = require('fs'),
+    routes = require('./routes'),
+    champ = require('./routes/championships'),
+    apiChamp = require('./routes/0.1/api-championships'),
+    mongojs = require('mongojs');
 
 /**
  *  Define the sample application.
@@ -43,6 +42,17 @@ var SampleApp = function() {
             //  allows us to run/test the app locally.
             console.warn('No OPENSHIFT_NODEJS_IP var, using 127.0.0.1');
             self.ipaddress = "127.0.0.1";
+        }
+
+        // default to a 'localhost' configuration:
+        self.dbConnectionString = '127.0.0.1:27017/ascolinelcuore';
+        // if OPENSHIFT env variables are present, use the available connection info:
+        if (process.env.OPENSHIFT_MONGODB_DB_PASSWORD) {
+            self.dbConnectionString = process.env.OPENSHIFT_MONGODB_DB_USERNAME + ":" +
+                process.env.OPENSHIFT_MONGODB_DB_PASSWORD + "@" +
+                process.env.OPENSHIFT_MONGODB_DB_HOST + ':' +
+                process.env.OPENSHIFT_MONGODB_DB_PORT + '/' +
+                process.env.OPENSHIFT_APP_NAME;
         }
     };
 
@@ -81,6 +91,12 @@ var SampleApp = function() {
     /*  App server functions (main app logic here).                       */
     /*  ================================================================  */
 
+    self.dbConnect = function() {
+        console.log('Connecting DB');
+        self.db = mongojs(self.dbConnectionString);
+        console.log('DB connected');
+    };
+
     /**
      *  Initialize the server (express) and create the routes and register
      *  the handlers.
@@ -103,19 +119,27 @@ var SampleApp = function() {
 			self.app.use(errorHandler());
 		}
 
+        self.app.use(function(err, req, res, next) {
+            console.error(err.stack);
+        });
+        self.app.use(function(err, req, res, next) {
+            res.status(500);
+            res.render('error', {error: err});
+        });
+
 		// ROUTES
         self.app.get('/', routes.index);
-        self.app.get('/api', routes.api);
-        self.app.get('/api/championships/overview', apiChamp.list(null, champService));
-        self.app.get('/api/championships/overview/:decade', apiChamp.list(null, champService));
-		self.app.get('/api/example', champ.example);
         self.app.get('/health', routes.health);
         self.app.get('/env', routes.env);
+        self.app.get('/api', routes.api);
         self.app.get('/championships', champ.list);
         self.app.get('/championships/:year', champ.year);
 
         // API
-        self.app.get('/api/championships', apiChamp.list(null, champService));
+        self.app.get('/api/0.1/championships', apiChamp.overview(self.db));
+        self.app.get('/api/0.1/championships/overview', apiChamp.overview(self.db));
+        self.app.get('/api/0.1/championships/overview/:decade', apiChamp.overviewDecade(self.db));
+        self.app.get('/api/0.1/example', champ.example);
 	};
 
 	/**
@@ -125,6 +149,7 @@ var SampleApp = function() {
         self.setupVariables();
         self.setupTerminationHandlers();
 
+        self.dbConnect();
         // Create the express server and routes.
         self.initializeServer();
     };
