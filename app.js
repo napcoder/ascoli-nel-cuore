@@ -110,7 +110,10 @@ var SampleApp = function() {
 		self.app.set('view engine', 'jade');
 		self.app.use(favicon(path.join(__dirname, 'public/img/favicon.ico')));
 		self.app.use(morgan('dev'));
-		self.app.use(bodyParser());
+        self.app.use(bodyParser.urlencoded({
+            extended: true
+        }));
+		self.app.use(bodyParser.json());
 		self.app.use(methodOverride());
 		self.app.use(express.static(path.join(__dirname, 'public')));
 
