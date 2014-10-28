@@ -28,12 +28,12 @@
 		}));
 
 		it('should start with english', function() {
-			expect(translate.uses()).toBe('en');
+			expect(translate.use()).toBe('en');
 		});
 
 		it('should change to "it" on request', function() {
 			scope.changeLanguage('it');
-			expect(translate.uses()).toBe('it');
+			expect(translate.use()).toBe('it');
 		});
 	});
 

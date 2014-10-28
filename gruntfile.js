@@ -12,20 +12,21 @@ module.exports = function(grunt) {
                 singleRun: true
             }
         },
-
         jshint: {
             options: {
                 //node: true,
                 globals: {
-                    angular: true,
-                    translationsEN: true,
-                    translationsIT: true
+                    angular: true
                 }
             },
-            files: ['gruntfile.js', 'app.js', 'test/client/**/*.js', 'test/server/**/*.js', 'routes/**/*.js', 'services/**/*.js', 'public/js/**/*.js']
+            files: ['gruntfile.js', 'app.js', 'tests/client/**/*.js', 'routes/**/*.js', 'public/js/**/*.js']
         }
     });
 
     grunt.loadNpmTasks('grunt-karma');
     grunt.loadNpmTasks('grunt-contrib-jshint');
+
+    grunt.registerTask('default', ['karma:unit']);
+    grunt.registerTask('test', ['karma:unit']);
+    grunt.registerTask('testSingle', ['karma:single']);
 };

@@ -3,19 +3,11 @@ module.exports = function(config){
         basePath : '../',
 
         files : [
-            'public/components/angular/angular.js',
-            'public/components/angular-translate/angular-translate.js',
-            'public/components/angular-*/angular-*.js',
-            'test/lib/angular/angular-mocks.js',
+            'public/components/angular/angular.min.js',
+            'public/components/angular-translate/angular-translate.min.js',
+            'public/components/angular-mocks/angular-mocks.js',
             'public/js/**/*.js',
-            'test/client/unit/**/*.js'
-        ],
-
-        exclude : [
-            'public/components/angular-*/angular-loader.js',
-            'public/components/angular-*/*.min.js',
-            'public/components/angular/*.min.js',
-            'public/components/angular-*/angular-scenario.js'
+            'tests/client/**/*.js'
         ],
 
         autoWatch : true,
@@ -27,18 +19,12 @@ module.exports = function(config){
 
         frameworks: ['jasmine'],
 
-        browsers : ['Chrome'],
+        browsers : ['PhantomJS'],
 
         plugins : [
-                'karma-junit-reporter',
-                'karma-chrome-launcher',
+                'karma-phantomjs-launcher',
                 'karma-jasmine'
-                ],
-
-        junitReporter : {
-            outputFile: 'test_out/unit.xml',
-            suite: 'unit'
-        }
+                ]
 
     });
 };
