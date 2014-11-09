@@ -1,0 +1,13 @@
+li#language.dropdown
+    a(href='#', data-toggle='dropdown').dropdown-toggle
+        i.fa.fa-flag.fa-fw
+        |  
+        span(translate='NAV.LANGUAGE', ng-cloak)
+        b.caret
+        ul.dropdown-menu
+            li: a(href='#' ng-click="changeLanguage('en')") 
+                img(src='img/flag_en.png')
+                |  English
+            li: a(href='#' ng-click="changeLanguage('it')") 
+                img(src='img/flag_it.png')
+                |  Italiano

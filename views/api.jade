@@ -1,17 +1,16 @@
 extends layout
 
 block content
-	div(ng-controller='ApiCtrl')
-		include navbar.jade
-		
-		h1 API
-		ul
-			li 
-				a(href='/api/0.1/championships/overview') /api/0.1/championships/overview
-				|  for available championships list
-			li 
-				a(href='/api/0.1/championships/overview/1980') /api/0.1/championships/overview/:decade
-				|  for selected decade only
-			li
-				a(href='/api/0.1/example') /api/0.1/example
-				|  for a complete example
+    div(ng-controller='ApiCtrl')
+        
+        h1 API
+        ul
+            li 
+                a(href='/api/0.1/championships/overview') /api/0.1/championships/overview
+                |  for available championships list
+            li 
+                a(href='/api/0.1/championships/overview/1980') /api/0.1/championships/overview/:decade
+                |  for selected decade only
+            li
+                a(href='/api/0.1/example') /api/0.1/example
+                |  for a complete example

@@ -2,12 +2,17 @@ module.exports = function(config){
     config.set({
         basePath : '../',
 
+        preprocessors: {
+            'public/partials/*.html': ['ng-html2js']
+        },
+
         files : [
             'public/components/angular/angular.min.js',
-            'public/components/angular-translate/angular-translate.min.js',
             'public/components/angular-mocks/angular-mocks.js',
+            'public/components/angular-translate/angular-translate.min.js',
+            'public/partials/*.html'
             'public/js/**/*.js',
-            'tests/client/**/*.js'
+            'tests/client/**/*.js',
         ],
 
         autoWatch : true,
@@ -17,13 +22,15 @@ module.exports = function(config){
         // CLI --log-level debug
         logLevel: config.LOG_INFO,
 
-        frameworks: ['jasmine'],
+        frameworks: ['mocha', 'chai'],
 
         browsers : ['PhantomJS'],
 
         plugins : [
                 'karma-phantomjs-launcher',
-                'karma-jasmine'
+                'karma-ng-html2js-preprocessor',
+                'karma-mocha',
+                'karma-chai'
                 ]
 
     });

@@ -3,21 +3,12 @@
 
 	/* Controllers */
 	angular.module('ascoliNcApp.controllers', [])
-		.controller('HomeCtrl', ['$scope', '$translate', function ($scope, $translate) {
-			$scope.changeLanguage = function(langKey) {
-				$translate.use(langKey);
-			};
+		.controller('HomeCtrl', ['$scope', function ($scope) {
 		}])
-		.controller('ApiCtrl', ['$scope', '$translate', function ($scope, $translate) {
-			$scope.changeLanguage = function(langKey) {
-				$translate.use(langKey);
-			};
+		.controller('ApiCtrl', ['$scope', function ($scope) {
 		}])
-		.controller('ChampionshipsCtrl', ['$scope', '$translate', '$http', function ($scope, $translate, $http) {
+		.controller('ChampionshipsCtrl', ['$scope', '$http', function ($scope, $http) {
 			$scope.championships = {};
-			$scope.changeLanguage = function (langKey) {
-				$translate.use(langKey);
-			};
 			$scope.setChampionships = function (decade, championships) {
 				$scope.championships[decade] = championships;
 			};
