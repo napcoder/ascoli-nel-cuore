@@ -1,6 +1,8 @@
 ascoli-nel-cuore
 ================
 
+[![Build Status](https://travis-ci.org/napcoder/ascoli-nel-cuore.svg?branch=master)](https://travis-ci.org/napcoder/ascoli-nel-cuore)
+
 This is test project with only learning purpose.
 
 The main goal is to improve my knowing of nodejs, express, openshift, mongodb, angularjs and twitter bootstrap.
