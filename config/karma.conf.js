@@ -10,9 +10,9 @@ module.exports = function(config){
             'public/components/angular/angular.min.js',
             'public/components/angular-mocks/angular-mocks.js',
             'public/components/angular-translate/angular-translate.min.js',
-            'public/partials/*.html'
+            'public/partials/*.html',
             'public/js/**/*.js',
-            'tests/client/**/*.js',
+            'tests/client/**/*.js'
         ],
 
         autoWatch : true,

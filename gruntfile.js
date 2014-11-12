@@ -37,8 +37,9 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-jade');
 
-    grunt.registerTask('default', ['karma:unit']);
-    grunt.registerTask('test', ['karma:unit']);
-    grunt.registerTask('testSingle', ['karma:single']);
     grunt.registerTask('compile', ['jade:compile']);
+    grunt.registerTask('test', ['compile', 'karma:unit']);
+    grunt.registerTask('testSingle', ['compile', 'karma:single']);
+    grunt.registerTask('default', ['test']);
+    grunt.registerTask('travis', 'testSingle');
 };

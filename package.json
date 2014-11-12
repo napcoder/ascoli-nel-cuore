@@ -9,7 +9,8 @@
     "url": "https://github.com/napcoder/ascoli-nel-cuore.git"
   },
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "test": "grunt travis --verbose"
   },
   "main": "app.js",
   "dependencies": {
